@@ -1,4 +1,5 @@
 import os 
+from tld import get_tld
 
 ## creating directory function 
 def create_directory(directory):
@@ -9,4 +10,8 @@ def create_directory(directory):
 def write_file (path, data):
     with open(path, "w") as file:
         file.write(data)
-    
+
+## getting the top level domain 
+def top_level_domain(unfiltered_domain):
+    top_level_dom = get_tld(unfiltered_domain)
+    return top_level_dom
