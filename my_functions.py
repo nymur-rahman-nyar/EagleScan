@@ -21,3 +21,17 @@ def write_file (path, data):
 def top_level_domain(url):
     my_tld = get_tld(url, as_object=True)
     return my_tld.fld
+
+
+## getting ip address from tld we input 
+def get_ip(tld):
+    '''
+        The function just outputs the ip address
+    '''
+    command = f"dig +short {tld}" 
+    process = os.popen(command)
+    ip = process.read().strip()
+    process.close()
+    
+    return ip
+    
