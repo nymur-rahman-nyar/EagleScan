@@ -19,5 +19,5 @@ def write_file (path, data):
 
 ## getting the top level domain 
 def top_level_domain(url):
-    my_tld = get_tld(url)
-    return my_tld
+    my_tld = get_tld(url, as_object=True)
+    return my_tld.fld
