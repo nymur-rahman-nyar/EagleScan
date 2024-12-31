@@ -31,10 +31,35 @@ def get_ip(tld):
     '''
     command = f"dig +short {tld}" 
     process = os.popen(command)
-    ip = process.read().strip()
+    ip = str(process.read().strip())
     process.close()
     
     return ip
 
 
-## nmap stuff i will add here prolly
+## Added nmap 
+def get_nmap(option, ip):
+    '''
+    -F : fast scan 
+    -A : Detailed 
+    -O : operating system (need root privilege)
+    Here, we are doing an nmap scan of the ip address
+    - open / close / filtered ports
+    - service idenificiation 
+    - also will help us find common vulnerabilities 
+    - network mapping 
+    - os system detection 
+    '''
+    
+    command = f"nmap {option} {str(ip)}"
+    process = os.popen(command)
+    output = str(process.read().strip())
+    process.close()
+    return output
+
+# Getting robot.txt file from website
+
+
+if __name__ == "__main__":
+    nmap = get_nmap('-F','108.167.143.215')
+    print(nmap)
