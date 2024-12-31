@@ -3,7 +3,8 @@ import os
 from tld import get_tld
 
 
-tld = my_functions.top_level_domain("https://www.vasonite.com")
+my_url = 'https://www.google.com/'
 
-
-print(tld)
+top_level_domain = my_functions.top_level_domain(my_url)
+print("\n Output: ")
+print(top_level_domain)

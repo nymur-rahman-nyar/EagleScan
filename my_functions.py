@@ -12,6 +12,6 @@ def write_file (path, data):
         file.write(data)
 
 ## getting the top level domain 
-def top_level_domain(unfiltered_domain):
-    top_level_dom = get_tld(unfiltered_domain)
-    return top_level_dom
+def top_level_domain(url):
+    my_tld = get_tld(url)
+    return my_tld
