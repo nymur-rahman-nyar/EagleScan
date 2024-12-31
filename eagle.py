@@ -2,7 +2,7 @@ import my_functions
 
 
 
-my_url = "https://www.google.com/"
+my_url = "https://www.vasonite.com/"
 
 top_level_domain = my_functions.top_level_domain(my_url)
 

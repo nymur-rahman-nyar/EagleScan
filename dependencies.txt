@@ -1,1 +1,2 @@
 - tld -> pip3 install tld
+-nmap -> brew install nmap

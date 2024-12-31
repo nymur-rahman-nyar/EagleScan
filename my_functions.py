@@ -23,6 +23,7 @@ def top_level_domain(url):
     return my_tld.fld
 
 
+
 ## getting ip address from tld we input 
 def get_ip(tld):
     '''
@@ -34,4 +35,6 @@ def get_ip(tld):
     process.close()
     
     return ip
-    
+
+
+## nmap stuff i will add here prolly
