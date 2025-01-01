@@ -22,8 +22,4 @@ This project is a **Cybersecurity Target Analysis Tool** designed to gather and 
   - `nmap`: Network mapper for scanning IPs and services.
   - `whois`: For gathering public domain registration data.
 
-## Requirements
-1. **Python Dependencies**:
-   Install the required Python libraries:
-   ```bash
-   pip install tld fpdf
+
