@@ -1,27 +1,29 @@
-# Project Title: Multi-functional Python Project
+# Cybersecurity Target Analysis Tool
+![demo_eaglescan-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/a3a6d40b-b54c-42b8-a99c-80d2c4ee12bd)
 
-## Description
-This project combines various functionalities implemented in Python. It includes custom utility functions and Python scripts. The project is designed for versatility and ease of use, catering to different computational and network-related tasks.
+## Overview
+This project is a **Cybersecurity Target Analysis Tool** designed to gather and generate comprehensive reports about a target URL. It integrates multiple tools and functionalities, including domain analysis, network mapping, IP discovery, and more. The output is saved as a structured report, making it an essential tool for penetration testers and cybersecurity enthusiasts.
 
 ## Features
-- **Custom Functions**: Core functionality implemented in `my_functions.py` for performing specific tasks.
-- **Domain and Network Analysis**: Tools like `tld` and `nmap` are integrated for analyzing domain and network information.
+- **Directory Management**: Automatically creates directories for storing reports.
+- **Top-Level Domain (TLD) Analysis**: Extracts the top-level domain of the target URL.
+- **IP Address Retrieval**: Fetches the IP address associated with the domain.
+- **Nmap Scanning**: Performs a fast nmap scan (`-F` flag) to gather details about open ports and services.
+- **Robots.txt Retrieval**: Fetches and analyzes the `robots.txt` file of the target website.
+- **WHOIS Lookup**: Retrieves WHOIS information for the domain.
 
-## Project Structure
-- **`eagle.py`**: Main script or entry point of the application.
-- **`my_functions.py`**: Custom utility functions used by the project.
-- **`makefile`**: Automates setup and execution tasks for the project.
-- **`dependencies.txt`**: Lists dependencies required to run the project.
-
-## Dependencies
-Ensure you have the following installed before running the project:
+## Technologies Used
 - **Python 3.6+**
-- **Required Libraries and Tools**:
-  - `tld`: Install using `pip install tld`
-  - `nmap`: Install using `pip install nmap` 
-  - `fpdf`: Install using `pip install fpdf`
-  - `flask`: Install using `pip install flask`
+- **Libraries**:
+  - `tld`: For extracting top-level domains.
+  - `fpdf`: For generating PDF reports.
+  - `urllib`: For making HTTP requests.
+- **Tools**:
+  - `nmap`: Network mapper for scanning IPs and services.
+  - `whois`: For gathering public domain registration data.
 
-To install all Python dependencies:
-```bash
-pip install -r requirements.txt
+## Requirements
+1. **Python Dependencies**:
+   Install the required Python libraries:
+   ```bash
+   pip install tld fpdf
