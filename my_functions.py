@@ -81,10 +81,22 @@ def get_robot_txt(url):
         return f"Error fetching robots.txt: {e}"
 
 
+# whois function to retrieve whois info from public directory 
 
+def whois_data(url):
+    '''
+    the url should be top level domain only 
+    for example. google.com and not www.google.com or any other 
+    prefix or suffix
+    '''
+    command = "whois "+ url
+    proccess = os.popen(command)
+    data = proccess.read().strip()
+    proccess.close()
+    return data
 
 
 
 
 if __name__ == "__main__":
-    print(get_robot_txt('https://www.google.com/'))
+    print(whois_data('google.com'))

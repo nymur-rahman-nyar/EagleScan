@@ -20,6 +20,10 @@ nmap_scan = my_functions.get_nmap('-F', ip_address)
 robot_txt = my_functions.get_robot_txt(my_url)
 
 
+# get whois info 
+whois_info = my_functions.whois_data(top_level_domain)
+
+
 print(f"output: {top_level_domain}\nIP: {str(ip_address)}")
 print(nmap_scan)
 
