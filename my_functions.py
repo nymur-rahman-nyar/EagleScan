@@ -63,6 +63,9 @@ def get_nmap(option, ip):
 
 # Getting robot.txt file from website
 def get_robot_txt(url):
+    '''
+    This would help us know which sites are sensitive to the site
+    '''
     if not url.startswith(('http://', 'https://')):
         url = 'http://' + url
 
