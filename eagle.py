@@ -1,31 +1,10 @@
 import my_functions
 
+OUTPUT_DIRECTORY = 'targets'
 
-
-my_url = "https://www.vasonite.com/"
-
-# filter the top level domain 
-top_level_domain = my_functions.top_level_domain(my_url)
-
-
-# get the IP Address 
-ip_address = my_functions.get_ip(top_level_domain)
-
-
-# get the nmap scan 
-nmap_scan = my_functions.get_nmap('-F', ip_address)
-
-
-# get robot.txt file of the webpage 
-robot_txt = my_functions.get_robot_txt(my_url)
-
-
-# get whois info 
-whois_info = my_functions.whois_data(top_level_domain)
-
-
-print(f"output: {top_level_domain}\nIP: {str(ip_address)}")
-print(nmap_scan)
-
-
-
+if __name__ == "__main__":
+    url = "https://www.vasonite.com"
+    target_name = "vasonite"
+    
+    # Generate the target report
+    my_functions.target_report(url, target_name)

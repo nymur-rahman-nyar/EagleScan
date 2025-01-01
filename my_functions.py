@@ -2,10 +2,14 @@ import os
 from tld import get_tld
 import urllib.request 
 import io
+from fpdf import FPDF
+
+FONT_SIZE = 8
+
 
 ## creating directory function 
 def create_directory(directory):
-    if not os.path.exist(directory):
+    if not os.path.exists(directory):  
         os.makedirs(directory)
 
 
@@ -81,8 +85,7 @@ def get_robot_txt(url):
         return f"Error fetching robots.txt: {e}"
 
 
-# whois function to retrieve whois info from public directory 
-
+# whois function to retrieve whois info from public directory
 def whois_data(url):
     '''
     the url should be top level domain only 
@@ -97,6 +100,63 @@ def whois_data(url):
 
 
 
+def target_report(url, target_name):
+    
+    directory = "./targets"
+    create_directory(directory)
+    
+    
+    tld = top_level_domain(url)
+    
+    
+    ip = get_ip(tld)
+    
+    
+    nmap_scan = get_nmap("-F", ip)  
+
+    
+    robots_txt = get_robot_txt(url)
+    
+    
+    whois_info = whois_data(tld)
+    
+    
+    report_content = f"""
+Target Report
+==============
+
+Target Name: {target_name}
+URL: {url}
+
+Top Level Domain
+-----------------
+{tld}
+
+IP Address
+-----------
+{ip}
+
+Nmap Scan Results
+------------------
+{nmap_scan}
+
+Robots.txt
+-----------
+{robots_txt}
+
+WHOIS Information
+------------------
+{whois_info}
+"""
+    
+    
+    file_path = os.path.join(directory, f"{target_name}.txt")
+    write_file(file_path, report_content)
+    print(f"Report saved at {file_path}")
+
+
+
+
 
 if __name__ == "__main__":
-    print(whois_data('google.com'))
+    print("works here !")

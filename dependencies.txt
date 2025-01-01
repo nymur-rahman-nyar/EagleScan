@@ -1,2 +1,4 @@
 - tld -> pip3 install tld
 -nmap -> brew install nmap
+-fpdf -> pip3 install fpdf
+-flask -> pip install flask
