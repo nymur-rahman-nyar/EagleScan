@@ -2,7 +2,6 @@ import os
 from tld import get_tld
 import urllib.request 
 import io
-from fpdf import FPDF
 
 FONT_SIZE = 8
 
