@@ -16,6 +16,10 @@ ip_address = my_functions.get_ip(top_level_domain)
 nmap_scan = my_functions.get_nmap('-F', ip_address)
 
 
+# get robot.txt file of the webpage 
+robot_txt = my_functions.get_robot_txt(my_url)
+
+
 print(f"output: {top_level_domain}\nIP: {str(ip_address)}")
 print(nmap_scan)
 

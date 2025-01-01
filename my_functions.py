@@ -1,5 +1,7 @@
 import os 
 from tld import get_tld
+import urllib.request 
+import io
 
 ## creating directory function 
 def create_directory(directory):
@@ -57,9 +59,29 @@ def get_nmap(option, ip):
     process.close()
     return output
 
+
+
 # Getting robot.txt file from website
+def get_robot_txt(url):
+    if not url.startswith(('http://', 'https://')):
+        url = 'http://' + url
+
+    if url[-1] != '/':
+        url += '/'
+
+    try:
+        req = urllib.request.urlopen(url + "robots.txt")
+        data = io.TextIOWrapper(req, encoding='utf-8')  # Fixed 'encoding' typo
+        final_robot = data.read()
+        return final_robot
+    except Exception as e:
+        return f"Error fetching robots.txt: {e}"
+
+
+
+
+
 
 
 if __name__ == "__main__":
-    nmap = get_nmap('-F','108.167.143.215')
-    print(nmap)
+    print(get_robot_txt('https://www.google.com/'))
