@@ -16,7 +16,6 @@ This project is a **Cybersecurity Target Analysis Tool** designed to gather and 
 - **Python 3.6+**
 - **Libraries**:
   - `tld`: For extracting top-level domains.
-  - `fpdf`: For generating PDF reports.
   - `urllib`: For making HTTP requests.
 - **Tools**:
   - `nmap`: Network mapper for scanning IPs and services.
